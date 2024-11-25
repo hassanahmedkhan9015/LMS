@@ -31,9 +31,9 @@ mongoose
   .catch((e) => console.log(e));
 
 //routes configuration
-app.use("/", (req, res) => {
-  res.send("test");
-});
+// app.use("/", (req, res) => {
+//   res.send("test");
+// });
 
 app.use("/auth", authRoutes);
 app.use("/media", mediaRoutes);

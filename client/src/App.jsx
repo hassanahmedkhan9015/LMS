@@ -13,6 +13,7 @@ import StudentViewCourseDetailsPage from "./pages/student/course-details";
 import PaypalPaymentReturnPage from "./pages/student/payment-return";
 import StudentCoursesPage from "./pages/student/student-courses";
 import StudentViewCourseProgressPage from "./pages/student/course-progress";
+import AdminDashboardpage from "./pages/admin";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -39,6 +40,19 @@ function App() {
           />
         }
       />
+      {/* test  */}
+
+      <Route
+        path="/admin"
+        element={
+          <RouteGuard
+            element={<AdminDashboardpage />}
+            authenticated={auth?.authenticate}
+            user={auth?.user}
+          />
+        }
+      />
+      {/* test  */}
       <Route
         path="/instructor/create-new-course"
         element={

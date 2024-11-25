@@ -6,9 +6,9 @@ function RouteGuard({ authenticated, user, element }) {
 
   console.log(authenticated, user, "useruser");
 
-  if (!authenticated && !location.pathname.includes("/auth")) {
-    return <Navigate to="/auth" />;
-  }
+  // if (!authenticated && !location.pathname.includes("/auth")) {
+  //   return <Navigate to="/auth" />;
+  // }
 
   if (
     authenticated &&
@@ -26,6 +26,25 @@ function RouteGuard({ authenticated, user, element }) {
   ) {
     return <Navigate to="/instructor" />;
   }
+
+  // test 
+  // if (
+  //   authenticated &&
+  //   user?.role !== "admin" &&
+  //   (location.pathname.includes("admin") ||
+  //     location.pathname.includes("/auth"))
+  // ) {
+  //   return <Navigate to="/home" />;
+  // }
+
+  // if (
+  //   authenticated &&
+  //   user.role === "admin" &&
+  //   !location.pathname.includes("admin")
+  // ) {
+  //   return <Navigate to="/admin" />;
+  // }
+  // test 
 
   return <Fragment>{element}</Fragment>;
 }
